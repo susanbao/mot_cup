@@ -83,20 +83,17 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <!-- <h1 class="title is-1 publication-title"><img src="./static/images/drone.svg" width="120">AirDet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1> -->
-          <h1 class="title is-2 publication-title">Uncertainty Quantification of Collaborative Detection for Self-Driving</h1>
-          <div class="column is-full_width">
-            <h2 class="title is-4">ICRA 2023</h2>
-          </div>
+          <h1 class="title is-2 publication-title">Collaborative Multi-Object Tracking with Conformal Uncertainty Propagation</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://scholar.google.com/citations?hl=en&user=EWyaceAAAAAJ">Sanbao Su</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="https://scholar.google.com/citations?hl=en&user=i_aajNoAAAAJ&view_op=list_works&sortby=pubdate">Yiming Li</a><sup>2</sup>,</span>
-            <span class="author-block">
-              <a href="https://scholar.google.com/citations?hl=en&user=jLLDCeoAAAAJ">Sihong He</a><sup>1</sup>,
+              <a href="https://scholar.google.com/citations?hl=en&user=StIsMNgAAAAJ">Songyang Han</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="https://scholar.google.com/citations?hl=en&user=StIsMNgAAAAJ">Songyang Han</a><sup>1</sup>,
+              <a href="https://scholar.google.com/citations?hl=en&user=i_aajNoAAAAJ&view_op=list_works&sortby=pubdate">Yiming Li</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/zhili-zhang-a63a02201/">Zhili Zhang</a><sup>1</sup>,
             </span>
             <span class="author-block">
               <a href="https://scholar.google.com/citations?user=YeG8ZM0AAAAJ&hl=en">Chen Feng</a><sup>2</sup>
@@ -121,7 +118,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2209.08162.pdf"
+                <a href="https://arxiv.org/pdf/2303.14346.pdf"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -130,7 +127,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2209.08162"
+                <a href="https://arxiv.org/abs/2303.14346"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -150,7 +147,7 @@
               </span> -->
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/coperception/double-m-quantification"
+                <a href="https://github.com/susanbao/mot_cup"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -160,7 +157,7 @@
               </span>
               <!-- Video Link. -->
               <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=i59ifEZK5XM"
+                <a href="https://www.youtube.com/watch?v=OJXmIbx-Y5M"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-youtube"></i>
@@ -212,7 +209,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/i59ifEZK5XM"
+          <iframe src="https://www.youtube.com/embed/OJXmIbx-Y5M"
                   frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
       </div>
@@ -238,7 +235,7 @@
     <!-- <h2 class="subtitle has-text-centered">
       (The <span style="color:#000000;">black</span> / <span style="color:#ff0000;">red</span> lines are the ground truth / predicted camera trajectory)
     </h2> -->
-    <h2 class="is-size-6 has-text-centered"><strong>Left</strong> figure shows detection results of intermediate collaboration in bird's eye view (BEV), and <strong>right</strong> figure zooms on a specific part to show the robust range of two detections. <span style="color:#ff0000;"><b>Red</b></span>  boxes are predictions, and <span style="color:#00CC66;"><b>green</b></span>  boxes are ground truth. The <span style="color:#FF8000;"><b>orange</b></span> ellipse denotes the covariance of each corner. The <strong>shadow convex hull</strong>  shows the uncertainty set of the detected object. The shadow convex hull covers the green bounding box in most cases, which helps the later modules in self-driving tasks, such as trajectory prediction with uncertainty propogation and robust planning and control. With our Double-M Quantification method, detected objects with low accuracy tend to have large uncertainties.</h2>
+    <h2 class="is-size-6 has-text-centered"> Difference in data association for multi-object tracking (MOT) with and without considering uncertainty. Ground truth bounding boxes are in <span style="color:#00CC66;">green</span>, detected bounding boxes in <span style="color:#FF8000;">orange</span>, and tracklets' bounding boxes in <span style="color:#ff0000;">green</span>, labeled with object IDs. Shadow ellipses indicate detected bounding box uncertainty. SORT, which doesn't consider uncertainty, is on the left side of the figure, while our MOT-CUP framework, which incorporates uncertainty, is on the right side. At time t-1, both MOT algorithms output tracklet ID 186. However, at time t, SORT fails to associate the low-quality detected object with tracklet 186 due to a large IoU distance. Thus, SORT removes the tracklet. In contrast, our MOT-CUP framework quantifies the uncertainty of COD with a larger shadow ellipse to represent the uncertainty of the bounding box for tracklet 186, and successfully associates the low-quality detected object by considering the COD uncertainty.</h2>
     
     </div>
   </div>
@@ -265,7 +262,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Sharing information between connected and autonomous vehicles (CAVs) fundamentally improves the performance of collaborative object detection for self-driving. However, CAVs still have uncertainties on object detection due to practical challenges, which will affect the later modules in self-driving such as planning and control. Hence, uncertainty quantification is crucial for safety-critical systems such as CAVs. Our work is the first to estimate the uncertainty of collaborative object detection. We propose a novel uncertainty quantification method, called Double-M Quantification, which tailors a moving block bootstrap (MBB) algorithm with direct modeling of the multivariant Gaussian distribution of each corner of the bounding box. Our method captures both the epistemic uncertainty and aleatoric uncertainty with one inference based on the offline Double-M training process. And it can be used with different collaborative object detectors. Through experiments on the comprehensive CAVs collaborative perception dataset, we show that our Double-M method achieves up to 4.09 times improvement on uncertainty score and up to 3.13% accuracy improvement, compared with the state-of-the-art uncertainty quantification. The results also validate that sharing information between CAVs is beneficial for the system in both improving accuracy and reducing uncertainty.
+            Object detection and multiple object tracking (MOT) are essential components of self-driving systems. Accurate detection and uncertainty quantification are both critical for onboard modules, such as perception, prediction, and planning, to improve the safety and robustness of autonomous vehicles. Collaborative object detection (COD) has been proposed to improve detection accuracy and reduce uncertainty by leveraging the viewpoints of multiple agents. However, little attention has been paid on how to leverage the uncertainty quantification from COD to enhance MOT performance. In this paper, as the first attempt, we design the uncertainty propagation framework to address this challenge, called MOT-CUP. Our framework first quantifies the uncertainty of COD through direct modeling and conformal prediction, and propogates this uncertainty information during the motion prediction and association steps. MOT-CUP is designed to work with different collaborative object detectors and baseline MOT algorithms. We evaluate MOT-CUP on V2X-Sim,  a comprehensive collaborative perception dataset, and demonstrate a 2% improvement in accuracy and a 2.67X reduction in uncertainty compared to the baselines, e.g., SORT and ByteTrack. MOT-CUP demonstrates the importance of uncertainty quantification in both COD and MOT, and provides the first attempt to improve the accuracy and reduce the uncertainty in MOT based on COD through uncertainty propogation.
           </p>
         </div>
       </div>
@@ -283,17 +280,14 @@
         <h2 class="title is-3">Contribution</h2>
         <div class="content has-text-justified">
           <li>
-            To the best of our knowledge, our proposed Double-M Quantification is the <strong>first attempt to estimate the uncertainty of collaborative object detection.</strong>
-            Our method tailors a moving block bootstrap algorithm to estimate both the <strong>epistemic and aleatoric uncertainty in one inference.</strong> 
+            To the best of our knowledge, our MOT-CUP framework is the <strong>first attempt to leverage quantified uncertainty from collaborative object detection to improve MOT performance.</strong> 
+            This framework can be applied to <strong>object detection model and MOT algorithms.</strong> 
           </li>
           <li>
-            We design a novel loss function and the <strong>representation format of the bounding box</strong> uncertainty in the direct modeling component to estimate the aleatoric uncertainty. 
+            In the collaborative object detection stage, we employ <strong>modeling and conformal prediction techniques to rigorously quantify the uncertainty.</strong> 
           </li>
           <li>
-            We validate the advantages of the proposed methodology based on V2X-SIM [1] and show that our Double-M Quantification method <strong>reduces the uncertainty and improves the accuracy.</strong> 
-          </li>
-          <li>
-            We also show that sharing information between CAVs is beneficial for the system in both improving accuracy and reducing uncertainty. 
+            For MOT, we further improve the original MOT algorithm by designing two novel methods that <strong>effectively leverage uncertainty information for both the Kalman Filter and association.</strong>
           </li>
         </div>
       </div>
@@ -314,9 +308,8 @@
         <div class="content has-text-justified">
           <br>  
           <p>
-            Implementation of our Double-M Quantification method on collaborative object detection. <strong>(a) Early collaboration</strong> shares raw point cloud with other agents, and <strong>(b) intermediate collaboration</strong> shares intermediate feature representations with other agents. <strong>(c) Double-M Quantification method</strong> estimates the multi-variate Gaussian distribution of each corner.
-    Our Double-M Quantification method can be used on different collaborative object detection. During the training stage, Double-M Quantification tailors a moving block bootstrapping algorithm to get the final model parameter, the average aleatoric uncertainty of the validation dataset and the covariance of all residual vectors for epistemic uncertainty. During the inference stage, we can combine the aforementioned two covariance matrix and the predicted covariance matrix from the object detector to compute the final covariance matrix.
-          </p>
+            Overview of our MOT-CUP framework. The <span style="color:#ff0000;">red</span> color highlights the novelties and important techniques in our MOT-CUP framework. In the collaborative object detection stage (COD) stage, we rigorously calculate uncertainty quantification (UQ) of each object detection via direct modeling (DM) and conformal prediction (CP).  In the motion prediction stage of MOT, we adopt a Standard Deviation-based Kalman Filter (SDKF) to enhance the Kalman Filter process, that leverages the UQ results and predicts the locations of the objects in the next time step with higher precision. In the association step, we first apply the baseline association method and then associate the unmatched detections and tracklets with the Negative Log Likelihood similarity metric, called NLLAI.
+            </p>
         </div>
       </div>
     </div>
@@ -338,8 +331,7 @@
       <div class="content has-text-justified">
         <br>  
         <p>
-          Visualization of our Double-M Quantification  results on different scenes of V2X-Sim [1]. The results of LB, DN, and UB are respectively shown in the first, second, and third row. <span style="color:#ff0000;">Red</span> boxes are predictions, and <span style="color:#00CC66;">green</span>
-boxes are ground truth. <span style="color:#FF8000;">Orange</span> ellipse denotes the covariance of each corner. We can see our Double-M Quantification predicts large <span style="color:#FF8000;">orange</span> ellipses when the differece between the <span style="color:#ff0000;">red</span> bounding box and the corresponding <span style="color:#00CC66;">green</span> bounding box is huge, which means our method is efficient. 
+          Visualization of results of the detection, original SORT, and our MOT-CUP framework over consecutive three frames. The collaborative object detector we used here is Upper-bound. In this visualization, <span style="color:#00CC66;">green</span> boxes are ground truth bounding boxes, <span style="color:#FF8000;">orange</span> boxes are detected bounding boxes, and <span style="color:#ff0000;">red</span> boxes are tracklets' bounding boxes as the output of MOT. The numbers beside the red boxes indicate object IDs. We observe that our MOT-CUP outperforms the original SORT algorithm in tracking object 332, as indicated by the red arrow. Furthermore, our MOT-CUP improves the accuracy of location, compared with the object detector, such as object 332 in frame 60. Overall, our results demonstrate the importance of considering uncertainty in MOT.
 
         </p>
         </p>
@@ -353,11 +345,11 @@ boxes are ground truth. <span style="color:#FF8000;">Orange</span> ellipse denot
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{Su2022uncertainty,
-      author    = {Su, Sanbao and Li, Yiming and He, Sihong and Han, Songyang and Feng, Chen and Ding, Caiwen and Miao, Fei},
-      title     = {Uncertainty Quantification of Collaborative Detection for Self-Driving},
+    <pre><code>@article{Su2023mot_cup,
+      author    = {Su, Sanbao and Han, Songyang and Li, Yiming and Zhang, Zhili and  and Feng, Chen and Ding, Caiwen and Miao, Fei},
+      title     = {Collaborative Multi-Object Tracking with Conformal Uncertainty Propagation},
       year={2023},
-      booktitle={IEEE International Conference on Robotics and Automation (ICRA)}
+      <!-- booktitle={IEEE International Conference on Robotics and Automation (ICRA)} -->
   }</code></pre>
   </div>
 </section>

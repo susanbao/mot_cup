@@ -1,2 +1,2 @@
-# Double-M-Uncertainty-Quantification
-Uncertainty Quantification of Collaborative Detection for Self-Driving
+# MOT-CUP
+Collaborative Multi-Object Tracking with Conformal Uncertainty Propagation
